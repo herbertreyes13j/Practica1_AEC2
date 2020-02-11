@@ -5,6 +5,9 @@ const path = require('path');
 // Inicializacion 
 const app = express();
 
+var stack=[];
+var stack2=[];  
+
 //Settins
 app.set('port',8080);
 app.set('views', path.join(__dirname, 'views'));
@@ -27,3 +30,4 @@ app.listen(app.get('port'),()=>{
     console.log('Server on port',app.get('port'));
 })
 
+module.exports={stack,stack2};

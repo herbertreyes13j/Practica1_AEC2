@@ -8,7 +8,7 @@ const app = express();
 var stack=[];
 var stack2=[];  
 
-//Settins
+//Settigns
 app.set('port',process.env.PORT || 8080);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
@@ -19,6 +19,7 @@ app.engine('.hbs', exphbs({
   helpers: require('./lib/handlebars')
 }))
 app.set('view engine', '.hbs');
+app.use(express.urlencoded())
 //WiddleWares
 app.use(morgan('dev')); // muestra mensajes y procesos por consola 
 

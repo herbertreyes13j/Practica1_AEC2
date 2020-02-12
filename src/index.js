@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express'); // inicializa la apliacion 
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const path = require('path');
@@ -9,7 +9,7 @@ var stack=[];
 var stack2=[];  
 
 //Settins
-app.set('port',8080);
+app.set('port',process.env.PORT || 8080);
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
   defaultLayout: 'main',
@@ -20,11 +20,16 @@ app.engine('.hbs', exphbs({
 }))
 app.set('view engine', '.hbs');
 //WiddleWares
-app.use(morgan('dev'));
+app.use(morgan('dev')); // muestra mensajes y procesos por consola 
 
 //Routes
 app.use(require('./routes/index'));
+app.use('/Asciimorse',require('./routes/AsciiMorse'));
+app.use('/Morseascii',require('./routes/MorseAscii'));
+app.use('/Game',require('./routes/Game'));
+app.use('/Historial',require('./routes/Historial'));
 app.use('/metodos',require('./routes/metodos'));
+app.use(express.json());
 
 app.listen(app.get('port'),()=>{
     console.log('Server on port',app.get('port'));

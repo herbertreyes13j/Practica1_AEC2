@@ -9,15 +9,20 @@ router.get('/',(req,res)=>{
 
 router.post('/Datos', (req,res)=>{
         
-        console.log(req.body.title);
+        
         console.log(req.body);
 
     //const {title,url,description} = req.body.title;
 
 
-    
+
     res.send(req.body);
+   
 });
+
+
+
+
 
 
 module.exports = router;

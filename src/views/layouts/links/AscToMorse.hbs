@@ -1,45 +1,42 @@
+
+
 <div class="container p-4">
     <div class="row">
         <div class="col-md-6 mx-auto text-center">
 
             <div class="card">
                 <div class="card-body">
-                    <form action="/AsciiMorse/Datos" method="POST">
-                        
-                        
-                        <div class="form-group">
-                            <label for="txtarea"> Ingresar Cadena de texto</label>
-                            <textarea name="description" rows="3" id="txtarea" class="form-control" placeholder="ASCII text" style="resize: none;"></textarea>
-                    <form action="/AsciiMorse/IngresarPalabra"  method="POST">
-                        <div class="form-group">
-                            <input type="text" name="palabra" class="form-control" placeholder="Palabra a Convertir"
-                                autofocus>
-                        </div>
+                  
 
-                        <div class="form-group">
-                            <button class="btn btn-success btn-block">
-                                Ascii to Morse
-                            <button onclick="prueba(palabra)" class="btn btn-success btn-block">
-                                Save
-                            </button>
-                        </div>
+                        <form action="AsciiMorse/IngresarPalabra" method="POST" >
+                            <div class="form-group">
+                                <label for="txtarea"> Ingresar Cadena de texto</label>
+                                <textarea name="palabra" rows="3" id="txtarea" class="form-control"
+                                    placeholder="ASCII text" style="resize: none;"></textarea>
+                            </div>
 
-                    </form>
+                            <div class="form-group">
+
+                                <button   onclick="prueba(palabra);" class="btn btn-success btn-block">
+                                    Ascii to Morse
+                                </button>
+                            </div>
+
+                        </form>
+
 
                 </div>
             </div>
+
         </div>
-
     </div>
-</div>
 
 
-<script>
+    <script>
 
-    function prueba(texto) {
+        function prueba(texto) {
 
+            
+            }
+    </script>
 
-        alert(texto.value);
-        alert('hola');
-    }
-</script>

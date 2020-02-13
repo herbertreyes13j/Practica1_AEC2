@@ -2,10 +2,16 @@ const express = require('express'); // inicializa la apliacion
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const path = require('path');
+var Queue= require('../node_modules/queue-fifo');
+
 // Inicializacion 
 const app = express();
 
+// constantes para levantarlo local
+const hostname='10.56.252.60';
+
 var stack=[];
+var cola=new Queue();
 var stack2=[];  
 
 //Settigns
@@ -23,6 +29,14 @@ app.use(express.urlencoded())
 //WiddleWares
 app.use(morgan('dev')); // muestra mensajes y procesos por consola 
 
+
+// variables globales
+
+app.use((req,res,next)=>{
+
+  next();
+});
+
 //Routes
 app.use(require('./routes/index'));
 app.use('/Asciimorse',require('./routes/AsciiMorse'));
@@ -32,8 +46,8 @@ app.use('/Historial',require('./routes/Historial'));
 app.use('/metodos',require('./routes/metodos'));
 app.use(express.json());
 
-app.listen(app.get('port'),()=>{
+app.listen(app.get('port'),'0.0.0.0',()=>{
     console.log('Server on port',app.get('port'));
 })
 
-module.exports={stack,stack2};
+module.exports={stack,stack2,cola};

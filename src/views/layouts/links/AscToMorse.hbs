@@ -4,25 +4,34 @@
 
             <div class="card">
                 <div class="card-body">
-                    <form action="/AsciiMorse/Datos" method="POST">
+                    <form action="/AsciiMorse/IngresarPalabra"  method="POST">
                         <div class="form-group">
-                            <input type="text" name="title" class="form-control" placeholder="Title" autofocus>
+                            <input type="text" name="palabra" class="form-control" placeholder="Palabra a Convertir"
+                                autofocus>
                         </div>
+
                         <div class="form-group">
-                            <input type="text" name="url" class="form-control" placeholder="URL">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="description" rows="2" class="form-control" placeholder="Description"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-success btn-block">
+                            <button onclick="prueba(palabra)" class="btn btn-success btn-block">
                                 Save
                             </button>
                         </div>
+
                     </form>
+
                 </div>
             </div>
         </div>
 
     </div>
 </div>
+
+
+<script>
+
+    function prueba(texto) {
+
+
+        alert(texto.value);
+        alert('hola');
+    }
+</script>

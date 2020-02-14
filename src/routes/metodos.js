@@ -1,24 +1,22 @@
 const express =  require('express');
 const router =  express.Router();
-const {stack,cola} = require('./index');
-
+//const {stack,stack2} = require('./index');
+const index = require('../index');
 
 
 
 router.get('/',function(req,res){
-    
 
-    if(stack.length>5){
-        console.log(stack.length);
-        res.send(stack.pop());
-        
+    console.log(index.stack);
+    console.log(index.stack2);
+    if(index.stack.length>0){
+        var resp = index.stack.shift();
+        index.stack2.push(resp);
+        res.send(resp);
     }else{
         res.send('vacia');
-
     }
-    
-// stack.psuh(vacia)
-// res.send(stack.pop())    
+ 
 
 });
 

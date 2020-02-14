@@ -2,7 +2,7 @@ const express = require('express'); // inicializa la apliacion
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const path = require('path');
-var Queue= require('../node_modules/queue-fifo');
+
 
 // Inicializacion 
 const app = express();
@@ -10,9 +10,10 @@ const app = express();
 // constantes para levantarlo local
 const hostname='10.56.252.60';
 
-var stack=[];
-var cola=new Queue();
-var stack2=[];  
+
+const stack=[];
+
+const stack2=[];  
 
 //Settigns
 app.set('port',process.env.PORT || 8080);
@@ -50,4 +51,10 @@ app.listen(app.get('port'),'0.0.0.0',()=>{
     console.log('Server on port',app.get('port'));
 })
 
-module.exports={stack,stack2,cola};
+
+
+
+
+exports.stack=stack;
+exports.stack2=stack2;
+

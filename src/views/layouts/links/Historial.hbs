@@ -2,9 +2,19 @@
     <div class="row mx-auto ">
         <div class="jumbotron mx-auto text-center" style="width:60%;">
             
-            <form>
-                
-            </form>
+           <h1 class="display-4">Historial de Palabras</h1>
+              <div class="list-group">
+                   {{#each lista}}
+                   <a href="#" class="list-group-item list-group-item-action list-group-item-success">{{this}}</a>
+  
+                {{else}}
+                <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Aun no hay palabras traducidas :( </a>
+  
+
+                {{/each}}
+              </div>
+               
+            
 
         </div>
     </div>

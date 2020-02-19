@@ -12,7 +12,7 @@ const hostname='10.56.252.60';
 
 
 const stack=[];
-
+const traducido="";
 const stack2=[];  
 
 //Settigns
@@ -47,7 +47,7 @@ app.use('/Historial',require('./routes/Historial'));
 app.use('/metodos',require('./routes/metodos'));
 app.use(express.json());
 
-app.listen(app.get('port'),'0.0.0.0',()=>{
+app.listen(app.get('port'),()=>{
     console.log('Server on port',app.get('port'));
 })
 
@@ -57,4 +57,5 @@ app.listen(app.get('port'),'0.0.0.0',()=>{
 
 exports.stack=stack;
 exports.stack2=stack2;
+exports.traducido=traducido;
 

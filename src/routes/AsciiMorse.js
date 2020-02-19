@@ -12,13 +12,11 @@ router.get('/',(req,res)=>{
 
 
 router.post('/IngresarPalabra',(req,res)=>{
-    index.stack.push(req.body.palabra);
+    var cadena= req.body.palabra+';'+'ascii';
+    index.stack.push(cadena);
     var size =index.stack.length;
-    
-    console.log('Palabra agregada a pila No->');
-    console.log(size);
-    
-
+    console.log('La palabra es '+cadena);
+    console.log('Palabra agregada a pila No->' + size);
     res.redirect('/AsciiMorse');
 });
 

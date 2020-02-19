@@ -1,5 +1,6 @@
 const express =  require('express');
 const router =  express.Router();
+const index=require('../index');
 
 router.get('/',(req,res)=>{
     res.render('layouts/links/JuegoASC');
@@ -17,10 +18,11 @@ router.post('/MisDatos',(req,res)=>{
          }
          console.log('mi cadena es ' + texto);
     }
-    console.log(lengthc);
-    // para el manejo de el limite de cadenas
 
-
+    var cadenapila=texto+';'+'juego';
+    index.stack.push(cadenapila);
+    console.log(cadenapila);
+    console.log('Palabra agregada a pila No->' +index.stack.length);
     res.redirect('/Game');
 });
 
